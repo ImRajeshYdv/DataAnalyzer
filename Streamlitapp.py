@@ -13,7 +13,7 @@ APIKey = os.getenv('Gemini_API_Key')
 GeminiModel = "gemini-2.5-flash"
 
 #client = genai.Client()
-st.write("API Key loaded:", APIKey)
+#st.write("API Key loaded:", APIKey)
 client = genai.Client(api_key=APIKey)
 
 def create_metadata(dataframe, description):
