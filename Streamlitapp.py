@@ -130,6 +130,9 @@ data_descrition = st.text_input("Enter short description about the uploaded file
 if st.button("Submit"):
     try:
         metadataa = create_metadata(df.head(5),data_descrition)
+        with st.expander("Show Metadata"):
+            st.write("MetaData:")
+            st.dataframe(metadataa) 
         code = generate_code(metadataa, user_queryy)
         exec(code)
         results_df = pd.read_csv("result.csv")
