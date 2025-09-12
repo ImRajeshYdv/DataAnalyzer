@@ -19,7 +19,8 @@ client = genai.Client(api_key=APIKey)
 def create_metadata(dataframe, description):
     prompt=f'''You are a helpful ai assistant that can answer questions about the metadata of the Data.
     You would be provided with 5 rows of data along with description of the data, based on that you have to create
-    a json object which talks about the data.
+    a json object which talks about the data. Make sure you create the metadata for all the columns in the dataframe and not limit yourself
+    to the number of columns mentioned in the Format below.
 
     Here is the description of the data: 
     {description}
@@ -29,7 +30,7 @@ def create_metadata(dataframe, description):
 
     Format:
     '''
-    format='''
+    format='''                                              
     {
         "metadata":{
             "description":"description of the data",
