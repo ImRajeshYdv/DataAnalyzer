@@ -26,7 +26,7 @@ def create_metadata(dataframe, description):
     {description}
 
     Here is the data:
-    {df}
+    {dataframe}
 
     Format:
     '''
@@ -34,11 +34,12 @@ def create_metadata(dataframe, description):
     {
         "metadata":{
             "description":"description of the data",
-            "col1":["datatype","data_description"],
-            "col2":["datatype","data_description"],
-            "col3":["datatype","data_description"],
-            "col4":["datatype","data_description"],
-            "col5":["datatype","data_description"]
+            "column_name1":["datatype","data_description"],
+            "column_name2":["datatype","data_description"],
+            "column_name3":["datatype","data_description"],
+            "column_name4":["datatype","data_description"],
+            "ccolumn_name5":["datatype","data_description"],
+            ....
             }
     }
     '''
