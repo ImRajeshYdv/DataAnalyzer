@@ -2,15 +2,19 @@ import os
 import re
 import pandas as pd
 import streamlit as st
+import google.genai as genai
 from dotenv import load_dotenv
 from google import genai
 
 load_dotenv()
 
 APIKey = os.getenv('Gemini_API_Key')
+# APIKey = st.secrets["Gemini_API_Key"]
 GeminiModel = "gemini-2.5-flash"
 
-client = genai.Client()
+#client = genai.Client()
+
+client = genai.Client(api_key=APIKey)
 
 def create_metadata(dataframe, description):
     prompt=f'''You are a helpful ai assistant that can answer questions about the metadata of the Data.
