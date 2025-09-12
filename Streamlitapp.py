@@ -132,7 +132,7 @@ if st.button("Submit"):
         metadataa = create_metadata(df.head(5),data_descrition)
         with st.expander("Show Metadata"):
             st.write("MetaData:")
-            st.dataframe(metadataa) 
+            st.write(metadataa) 
         code = generate_code(metadataa, user_queryy)
         exec(code)
         results_df = pd.read_csv("result.csv")
